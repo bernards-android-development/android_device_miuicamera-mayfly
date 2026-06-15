@@ -1,50 +1,35 @@
-From bc7d0fc60ee9d610b1d65304ba648e63b2840b61 Mon Sep 17 00:00:00 2001
+From 62040fe4f614c8c5bcb505b1dd978c1977c97480 Mon Sep 17 00:00:00 2001
 From: Arian <arian.kulmer@web.de>
 Date: Wed, 16 Oct 2024 01:29:58 +0200
 Subject: [PATCH 6/7] Change com.android.camera.action.REVIEW to
  android.provider.action.REVIEW
 
-This is the standard intent for review actions
 ---
- smali/com/android/camera/a6.smali | 2 +-
- smali/com/android/camera/l3.smali | 4 ++--
- 2 files changed, 3 insertions(+), 3 deletions(-)
+ smali/a0/k5.smali | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/smali/com/android/camera/a6.smali b/smali/com/android/camera/a6.smali
-index 67970325c..c7d160683 100644
---- a/smali/com/android/camera/a6.smali
-+++ b/smali/com/android/camera/a6.smali
-@@ -193,7 +193,7 @@
+diff --git a/smali/a0/k5.smali b/smali/a0/k5.smali
+index 5a5eaee12ad5f62880d1b02e5dde9dc094b84573..0de1dad69674e6c576aa8ddc82ec12235b07c119 100644
+--- a/smali/a0/k5.smali
++++ b/smali/a0/k5.smali
+@@ -89,7 +89,7 @@
  
- .field public static d1:J = 0x0L
+     const/4 v4, 0x0
  
--.field public static final e:Ljava/lang/String; = "com.android.camera.action.REVIEW"
-+.field public static final e:Ljava/lang/String; = "android.provider.action.REVIEW"
+-    const-string v5, "com.android.camera.action.REVIEW"
++    const-string v5, "android.provider.action.REVIEW"
  
- .field public static final e0:I = 0x8c36
+     if-eqz v1, :cond_0
  
-diff --git a/smali/com/android/camera/l3.smali b/smali/com/android/camera/l3.smali
-index ecc8ba3b0..a5c3e074d 100644
---- a/smali/com/android/camera/l3.smali
-+++ b/smali/com/android/camera/l3.smali
-@@ -1090,7 +1090,7 @@
+@@ -127,7 +127,7 @@
+     :cond_1
+     new-array v1, v4, [Ljava/lang/Object;
  
-     move-result p0
+-    const-string v6, "gotoGallery: com.android.camera.action.REVIEW"
++    const-string v6, "gotoGallery: android.provider.action.REVIEW"
  
--    const-string v0, "com.android.camera.action.REVIEW"
-+    const-string v0, "android.provider.action.REVIEW"
- 
-     if-eqz p0, :cond_0
- 
-@@ -1151,7 +1151,7 @@
- 
-     const-string p1, "GalleryHelper"
- 
--    const-string v1, "gotoGallery: com.android.camera.action.REVIEW"
-+    const-string v1, "gotoGallery: android.provider.action.REVIEW"
- 
-     invoke-static {p1, v1, p0}, Lcom/android/camera/log/Log;->d(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+     invoke-static {v3, v6, v1}, Lcom/android/camera/log/Log;->d(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
  
 -- 
-2.47.3
+2.45.1.windows.1
 
